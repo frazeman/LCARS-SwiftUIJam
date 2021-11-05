@@ -23,7 +23,7 @@ struct Capsule: View {
             .size(width: height*2, height: height)
             .frame(width: height*1.20, height: height, alignment: .leading)
             .clipped()
-            .foregroundColor(.orange)
+            .foregroundColor(color)
             .rotationEffect(Angle(degrees: (orientation == .right ? 180 : 0.0)))
     }
 }

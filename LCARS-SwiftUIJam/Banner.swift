@@ -11,26 +11,16 @@ struct Banner: View {
 
     var color : Color = .orange
     var height : Double = 50
+    var capsuleColor : Color?
 
     var body: some View {
+        let chosenCapsuleColor = capsuleColor ?? color
         HStack(alignment: .center, spacing: 5.0) {
-            Circle()
-                .trim(from: 0.5, to: 1.0)
-                .rotation(Angle(degrees: -90))
-                .frame(width: height, height: height, alignment: .leading)
-                .frame(width: height/2, height: height, alignment: .leading)
-                .foregroundColor(color)
-
+            Capsule(color: chosenCapsuleColor, height: height, orientation: .left)
         Rectangle()
             .frame(width: nil, height: height, alignment: .center)
             .foregroundColor(color)
-
-            Circle()
-                .trim(from: 0.5, to: 1.0)
-                .rotation(Angle(degrees: 90))
-                .frame(width: height, height: height, alignment: .trailing)
-                .frame(width: height/2, height: height, alignment: .trailing)
-                .foregroundColor(color)
+            Capsule(color: chosenCapsuleColor, height: height, orientation: .right)
 
         }
     }
@@ -38,6 +28,6 @@ struct Banner: View {
 
 struct Banner_Previews: PreviewProvider {
     static var previews: some View {
-        Banner(color: .purple, height: 40)
+        Banner(color: .purple, height: 40, capsuleColor: .orange)
     }
 }
