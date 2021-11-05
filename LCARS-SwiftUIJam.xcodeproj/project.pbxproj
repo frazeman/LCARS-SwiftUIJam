@@ -14,6 +14,7 @@
 		4C18C4B127357ECE00173312 /* LCARS_SwiftUIJamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C18C4B027357ECE00173312 /* LCARS_SwiftUIJamTests.swift */; };
 		4C18C4BB27357ECE00173312 /* LCARS_SwiftUIJamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C18C4BA27357ECE00173312 /* LCARS_SwiftUIJamUITests.swift */; };
 		4C18C4BD27357ECE00173312 /* LCARS_SwiftUIJamUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C18C4BC27357ECE00173312 /* LCARS_SwiftUIJamUITestsLaunchTests.swift */; };
+		4C18C4CA2735874B00173312 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C18C4C92735874B00173312 /* Welcome.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		4C18C4B627357ECE00173312 /* LCARS-SwiftUIJamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LCARS-SwiftUIJamUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C18C4BA27357ECE00173312 /* LCARS_SwiftUIJamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCARS_SwiftUIJamUITests.swift; sourceTree = "<group>"; };
 		4C18C4BC27357ECE00173312 /* LCARS_SwiftUIJamUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCARS_SwiftUIJamUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4C18C4C92735874B00173312 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				4C18C49F27357ECC00173312 /* LCARS_SwiftUIJamApp.swift */,
 				4C18C4A127357ECC00173312 /* ContentView.swift */,
+				4C18C4C92735874B00173312 /* Welcome.swift */,
 				4C18C4A327357ECE00173312 /* Assets.xcassets */,
 				4C18C4A527357ECE00173312 /* Preview Content */,
 			);
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C18C4A227357ECC00173312 /* ContentView.swift in Sources */,
+				4C18C4CA2735874B00173312 /* Welcome.swift in Sources */,
 				4C18C4A027357ECC00173312 /* LCARS_SwiftUIJamApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
