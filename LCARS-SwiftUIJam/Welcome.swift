@@ -10,6 +10,7 @@ import SwiftUI
 struct Welcome: View {
     var body: some View {
         VStack {
+            Image("Logo")
             Text("THE LCARS COMPUTER NETWORK")
                 .font(Font.LCARS.title)
                 .foregroundColor(.orange)
