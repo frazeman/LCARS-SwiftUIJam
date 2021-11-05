@@ -11,7 +11,7 @@ struct Welcome: View {
     var body: some View {
         VStack {
             Text("THE LCARS COMPUTER NETWORK")
-                .font(.title.weight(.semibold))
+                .font(Font.LCARS.title)
                 .foregroundColor(.orange)
         }
         .frame(
