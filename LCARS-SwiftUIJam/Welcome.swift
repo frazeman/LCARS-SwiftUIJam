@@ -10,11 +10,16 @@ import SwiftUI
 struct Welcome: View {
     var body: some View {
         VStack {
+            Banner(color: .orange, height: 40)
+            Spacer()
             Image("Logo")
             Text("THE LCARS COMPUTER NETWORK")
                 .font(Font.LCARS.title)
                 .foregroundColor(.orange)
+            Spacer()
+            Banner(color: .orange, height: 40)
         }
+        .padding()
         .frame(
             minWidth: .zero,
             maxWidth: .infinity,
@@ -22,6 +27,7 @@ struct Welcome: View {
             maxHeight: .infinity
         )
         .background(Color.black)
+
     }
 }
 
