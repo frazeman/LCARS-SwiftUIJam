@@ -13,12 +13,12 @@ struct Banner: View {
     var height : Double = 50
 
     var body: some View {
-        HStack {
+        HStack(alignment: .center, spacing: 5.0) {
             Circle()
                 .trim(from: 0.5, to: 1.0)
                 .rotation(Angle(degrees: -90))
                 .frame(width: height, height: height, alignment: .leading)
-                .offset(CGSize(width: height/2, height: 0.0))
+                .frame(width: height/2, height: height, alignment: .leading)
                 .foregroundColor(color)
 
         Rectangle()
@@ -28,8 +28,8 @@ struct Banner: View {
             Circle()
                 .trim(from: 0.5, to: 1.0)
                 .rotation(Angle(degrees: 90))
-                .frame(width: height, height: height, alignment: .leading)
-                .offset(CGSize(width: -height/2, height: 0.0))
+                .frame(width: height, height: height, alignment: .trailing)
+                .frame(width: height/2, height: height, alignment: .trailing)
                 .foregroundColor(color)
 
         }
