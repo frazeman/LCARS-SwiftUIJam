@@ -20,11 +20,12 @@ class AnimationSequence {
     }
 
     @discardableResult
-    func append(duration: Double? = nil, delay: Double? = nil, block: @escaping AnimationBlock) -> AnimationSequence {
+    func append(duration: Double? = nil, delay: Double? = nil, sound: Sound? = nil, block: @escaping AnimationBlock) -> AnimationSequence {
         animations.append(
             AnimationConfiguration(
                 duration: duration ?? defaultConfig.duration,
                 delay: delay ?? defaultConfig.delay,
+                sound: sound,
                 block: block
             )
         )
@@ -56,6 +57,12 @@ class AnimationSequence {
                 config.block?()
             }
 
+            if let sound = config.sound {
+                DispatchQueue.main.asyncAfter(deadline: .now() + offsetTime) {
+                    SoundManager.shared.play(sound)
+                }
+            }
+
             offsetTime += config.duration
         }
 
@@ -70,5 +77,6 @@ typealias AnimationBlock = () -> Void
 struct AnimationConfiguration {
     var duration: Double
     var delay: Double
+    var sound: Sound?
     let block: AnimationBlock?
 }

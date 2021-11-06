@@ -12,6 +12,9 @@ struct LCARS_SwiftUIJamApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onAppear {
+                    SoundManager.shared.enabled = true
+                }
         }
     }
 }

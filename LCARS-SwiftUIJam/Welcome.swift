@@ -62,7 +62,7 @@ struct Welcome: View {
 
         // Blink image
         sequence
-            .append(delay: 1) {
+            .append(delay: 1, sound: .SingleBeep) {
                 showImage = true
             }
             .append(delay: 0.1) {
@@ -74,12 +74,12 @@ struct Welcome: View {
             .append(delay: 0.1) {
                 showImage = false
             }
-            .append(delay: 0.1) {
+            .append(delay: 0.1, sound: .SingleBeep) {
                 showImage = true
             }
 
         sequence
-            .append(delay: 0.5) {
+            .append(delay: 0.5, sound: .DoubleBeep) {
                 showTitle = true
             }
 

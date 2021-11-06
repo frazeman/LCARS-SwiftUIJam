@@ -22,6 +22,9 @@
 		4C18C4D027358D2900173312 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C18C4CF27358D2900173312 /* Fonts.swift */; };
 		4C18C4D32735B2B100173312 /* NumbersGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C18C4D22735B2B100173312 /* NumbersGrid.swift */; };
 		4C18C4D52736D75700173312 /* AnimationSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C18C4D42736D75700173312 /* AnimationSequence.swift */; };
+		4C18C4D92736F01500173312 /* Two Beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4C18C4D72736F01500173312 /* Two Beep.wav */; };
+		4C18C4DA2736F01500173312 /* Single Beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4C18C4D82736F01500173312 /* Single Beep.wav */; };
+		4C18C4DC2736F02A00173312 /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C18C4DB2736F02A00173312 /* Sounds.swift */; };
 		969D53FC2735C31D00249197 /* Capsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D53FB2735C31C00249197 /* Capsule.swift */; };
 		969D53FE2735C7CF00249197 /* Corner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D53FD2735C7CF00249197 /* Corner.swift */; };
 		96DABD1627358F97003C93CE /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DABD1527358F97003C93CE /* Banner.swift */; };
@@ -64,6 +67,9 @@
 		4C18C4D127358E2B00173312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4C18C4D22735B2B100173312 /* NumbersGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersGrid.swift; sourceTree = "<group>"; };
 		4C18C4D42736D75700173312 /* AnimationSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSequence.swift; sourceTree = "<group>"; };
+		4C18C4D72736F01500173312 /* Two Beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Two Beep.wav"; sourceTree = "<group>"; };
+		4C18C4D82736F01500173312 /* Single Beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Single Beep.wav"; sourceTree = "<group>"; };
+		4C18C4DB2736F02A00173312 /* Sounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
 		969D53FB2735C31C00249197 /* Capsule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Capsule.swift; sourceTree = "<group>"; };
 		969D53FD2735C7CF00249197 /* Corner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Corner.swift; sourceTree = "<group>"; };
 		96DABD1527358F97003C93CE /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
@@ -130,7 +136,9 @@
 				969D53FD2735C7CF00249197 /* Corner.swift */,
 				4C18C4D42736D75700173312 /* AnimationSequence.swift */,
 				4C18C4CF27358D2900173312 /* Fonts.swift */,
+				4C18C4DB2736F02A00173312 /* Sounds.swift */,
 				4C18C4A327357ECE00173312 /* Assets.xcassets */,
+				4C18C4D62736F00300173312 /* Sounds */,
 				4C18C4CB27358CF000173312 /* Fonts */,
 				4C18C4A527357ECE00173312 /* Preview Content */,
 			);
@@ -176,6 +184,15 @@
 				4C18C4CD27358D0600173312 /* Swiss 911 Ultra Compressed.ttf */,
 			);
 			path = "Swiss 911";
+			sourceTree = "<group>";
+		};
+		4C18C4D62736F00300173312 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				4C18C4D82736F01500173312 /* Single Beep.wav */,
+				4C18C4D72736F01500173312 /* Two Beep.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,7 +300,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C18C4A727357ECE00173312 /* Preview Assets.xcassets in Resources */,
+				4C18C4DA2736F01500173312 /* Single Beep.wav in Resources */,
 				4C18C4CE27358D0600173312 /* Swiss 911 Ultra Compressed.ttf in Resources */,
+				4C18C4D92736F01500173312 /* Two Beep.wav in Resources */,
 				4C18C4A427357ECE00173312 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +332,7 @@
 				147F7C712736E3B9009BE648 /* AuxSystemsMonitorMain.swift in Sources */,
 				4C18C4D027358D2900173312 /* Fonts.swift in Sources */,
 				969D53FC2735C31D00249197 /* Capsule.swift in Sources */,
+				4C18C4DC2736F02A00173312 /* Sounds.swift in Sources */,
 				969D53FE2735C7CF00249197 /* Corner.swift in Sources */,
 				4C18C4D52736D75700173312 /* AnimationSequence.swift in Sources */,
 				4C18C4A227357ECC00173312 /* ContentView.swift in Sources */,
