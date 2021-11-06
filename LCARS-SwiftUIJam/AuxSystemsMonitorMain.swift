@@ -9,10 +9,27 @@ import SwiftUI
 
 struct AuxSystemsMonitorMain: View {
     var body: some View {
-    AuxSystemsMonitorHeader()
+    
         HStack {
+            VStack {
             
-        }// Aux 
+                HStack {
+                    AuxSystemsMonitorHeader()
+                }
+                HStack {
+                    Corner(effectiveWidth: 0.5, bannerHeight: 50, color: Color("LightPink"), orientation: .bottomLeft)
+                        RectangleGen(color: Color("RosePink"), height: 50, width: 400)
+                        RectangleGen(color: .orange, height: 50, width: 50)
+                        RectangleGen(color: Color("LightPink"),height: 50, width: 200)
+                        RectangleGen(color: Color("LightPink"),height: 50, width: 400)
+                        RectangleGen(color: Color("RosePink"), height: 50, width: 100)
+                }
+            }
+            VStack {
+            
+                
+            }
+        }
     }
     
 }

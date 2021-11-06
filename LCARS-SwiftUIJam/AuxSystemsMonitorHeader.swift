@@ -11,12 +11,8 @@ struct AuxSystemsMonitorHeader: View {
     var body: some View {
         HStack {
             VStack {
-                Rectangle()
-                    .fill(Color.red)
-                    .frame(width: 100, height: 100)
-                Rectangle()
-                    .fill(Color.purple)
-                    .frame(width: 100, height: 100)
+                RectangleGen(color: .orange, title: "LCARS 23295", alignment: .bottomTrailing)
+                RectangleGen(color: Color("LightPurple"), title: "01-23584", alignment: .topTrailing)
             } // Main Header Left Section
             VStack(alignment: .trailing) {
                 Text("AUXILIARY SYSTEMS MONITOR 882")
