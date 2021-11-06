@@ -8,8 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var currentView: LCARSView = .welcome
+
+    enum LCARSView {
+        case welcome
+        case auxSystemsMonitor
+    }
+
     var body: some View {
-        Welcome()
+        switch currentView {
+        case .welcome:
+            Welcome(buttonTapped: { self.currentView = .auxSystemsMonitor })
+        case .auxSystemsMonitor:
+            AuxSystemsMonitorMain()
+        }
     }
 }
 

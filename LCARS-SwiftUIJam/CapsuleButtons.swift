@@ -27,8 +27,43 @@ struct CapsuleButtons: View {
     }
 }
 
+
+struct LcarsButtonStyle: ButtonStyle {
+    var color: Color = .orange
+
+    func makeBody(configuration: Self.Configuration) -> some View {
+        ZStack (alignment: .bottomTrailing) {
+            SwiftUI.Capsule()
+                .fill(color)
+
+            SwiftUI.Capsule()
+                .fill(configuration.isPressed ? Color.white.opacity(0.65) : .clear)
+
+            configuration.label
+                .font(Font.LCARS.headline)
+                .padding(.trailing, 30)
+                .padding(.bottom, 5)
+        }
+        .frame(width: 200, height: 60)
+    }
+}
+
+
 struct CapsuleButtons_Previews: PreviewProvider {
     static var previews: some View {
-        CapsuleButtons()
+        VStack {
+            CapsuleButtons()
+            Button("ACCESS") {}
+            .buttonStyle(LcarsButtonStyle())
+        }
+        .padding()
+        .frame(
+            minWidth: .zero,
+            maxWidth: .infinity,
+            minHeight: .zero,
+            maxHeight: .infinity
+        )
+        .background(Color.black)
+        .previewLayout(.fixed(width: 800, height: 200))
     }
 }

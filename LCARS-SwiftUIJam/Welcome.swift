@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct Welcome: View {
-    @State var showImage: Bool = true
-    @State var showTitle: Bool = true
-    @State var showSubtitle: Bool = true
+    var buttonTapped: (() -> Void)? = nil
+
+    @State private var showImage: Bool = true
+    @State private var showTitle: Bool = true
+    @State private var showSubtitle: Bool = true
+    @State private var showButton: Bool = false
 
     var body: some View {
         VStack {
@@ -35,6 +38,13 @@ struct Welcome: View {
             .multilineTextAlignment(.center)
             .foregroundColor(Color("LightPurple"))
             .opacity(showSubtitle ? 1 : 0)
+
+            Button("Access".uppercased()) {
+                SoundManager.shared.play(.SingleBeep)
+                buttonTapped?()
+            }
+            .buttonStyle(LcarsButtonStyle())
+            .opacity(showButton ? 1 : 0)
 
             Spacer()
 
@@ -89,6 +99,17 @@ struct Welcome: View {
             }
 
         sequence
+            .append(delay: 0.3) {
+                showButton = true
+            }
+            .append(delay: 0.1) {
+                showButton = false
+            }
+            .append(delay: 0.1) {
+                showButton = true
+            }
+
+        sequence
             .start()
     }
 }
@@ -96,6 +117,6 @@ struct Welcome: View {
 struct Welcome_Previews: PreviewProvider {
     static var previews: some View {
         Welcome()
-            .previewLayout(.fixed(width: 800, height: 600))
+            .previewLayout(.fixed(width: 900, height: 700))
     }
 }
