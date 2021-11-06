@@ -9,27 +9,21 @@ import SwiftUI
 
 struct RectangleGen: View {
     
-    public enum PositionOfText {
-        case top
-        case bottom
-    }
-    
-    var setColor: Color = Color.gray
-    var setDisplayText: String = "LCARS300"
-    var height: Double = 200
-    var width: Double = 100
-    var textPosition: PositionOfText = .bottom
+    var setColor: Color = Color.orange
+    var setDisplayText: String = "LCARS 23295"
+    var height: Double = 130
+    var width: Double = 180
     
     var body: some View {
-        ZStack (alignment: .topTrailing) {
+        ZStack (alignment: .bottomTrailing) {
             Rectangle()
                 .fill(setColor)
             Text(setDisplayText.uppercased())
                 .font(Font.LCARS.headline)
-                .padding(.trailing, 30)
-                .padding(.top, 5)
+                .padding(.trailing, 15)
+                .padding(.bottom, 5)
         }
-        .frame(width: 200, height: 80)
+        .frame(width: width, height: height)
     }
 }
 
