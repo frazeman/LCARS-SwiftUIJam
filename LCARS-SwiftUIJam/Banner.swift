@@ -9,18 +9,16 @@ import SwiftUI
 
 struct Banner: View {
 
-    var color : Color = .orange
+    var bottomBar : Bool = false
     var height : Double = 50
-    var capsuleColor : Color?
 
     var body: some View {
-        let chosenCapsuleColor = capsuleColor ?? color
         HStack(alignment: .center, spacing: 5.0) {
-            Capsule(color: chosenCapsuleColor, height: height, orientation: .left)
+            Capsule(color: bottomBar ? .orange : Color("LightPurple"), height: height, orientation: .left)
         Rectangle()
             .frame(width: nil, height: height, alignment: .center)
-            .foregroundColor(color)
-            Capsule(color: chosenCapsuleColor, height: height, orientation: .right)
+            .foregroundColor(Color("LightPurple"))
+            Capsule(color: .orange, height: height, orientation: .right)
 
         }
     }
@@ -28,6 +26,6 @@ struct Banner: View {
 
 struct Banner_Previews: PreviewProvider {
     static var previews: some View {
-        Banner(color: .purple, height: 40, capsuleColor: .orange)
+        Banner(bottomBar: false, height: 40)
     }
 }
