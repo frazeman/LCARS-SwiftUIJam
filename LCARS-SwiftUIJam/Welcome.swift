@@ -16,6 +16,12 @@ struct Welcome: View {
             Text("THE LCARS COMPUTER NETWORK")
                 .font(Font.LCARS.title)
                 .foregroundColor(.orange)
+            Group {
+                Text("AUTHORIZED ACCESS ONLY")
+                Text("PLEASE REPORT MALFUNCTIONS TO ENGINEERING STAFF ON DUTY")
+            }
+            .font(Font.LCARS.header)
+            .foregroundColor(Color("LightPurple"))
             Spacer()
             Banner(bottomBar: true, height: 40)
         }
