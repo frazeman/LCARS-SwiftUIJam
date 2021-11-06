@@ -9,16 +9,16 @@ import SwiftUI
 
 struct CapsuleButtons: View {
     
-    var setColor: Color = Color.red
-    var setDisplayText: String = "01-2345"
+    var color: Color = Color.red
+    var title: String = "01-2345"
     
     
     var body: some View {
     
         ZStack (alignment: .bottomTrailing) {
             SwiftUI.Capsule()
-                .fill(setColor)
-            Text(setDisplayText.uppercased())
+                .fill(color)
+            Text(title.uppercased())
                 .font(Font.LCARS.headline)
                 .padding(.trailing, 30)
                 .padding(.bottom, 5)

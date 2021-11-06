@@ -9,19 +9,22 @@ import SwiftUI
 
 struct RectangleGen: View {
     
-    var setColor: Color = Color.orange
-    var setDisplayText: String = "LCARS 23295"
+    var color: Color = Color.orange
+    var title: String? = nil
     var height: Double = 130
     var width: Double = 180
+    var alignment: Alignment = .bottomTrailing
     
     var body: some View {
-        ZStack (alignment: .bottomTrailing) {
+        ZStack (alignment: alignment) {
             Rectangle()
-                .fill(setColor)
-            Text(setDisplayText.uppercased())
-                .font(Font.LCARS.headline)
-                .padding(.trailing, 15)
-                .padding(.bottom, 5)
+                .fill(color)
+            if let title = title {
+                Text(title.uppercased())
+                    .font(Font.LCARS.headline)
+                    .padding(.vertical, 5)
+                    .padding(.horizontal, 10)
+            }
         }
         .frame(width: width, height: height)
     }
@@ -29,6 +32,6 @@ struct RectangleGen: View {
 
 struct RectangleGen_Previews: PreviewProvider {
     static var previews: some View {
-        RectangleGen()
+        RectangleGen(title: "LCARS 32145")
     }
 }

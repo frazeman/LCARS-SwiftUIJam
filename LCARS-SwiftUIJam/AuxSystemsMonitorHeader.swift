@@ -26,12 +26,12 @@ struct AuxSystemsMonitorHeader: View {
                     Text("Fraser's data goes here")
                         .foregroundColor(.blue)
                     VStack {
-                        CapsuleButtons(setColor: Color("LightPurple"), setDisplayText: "07-3215")
-                        CapsuleButtons(setColor: Color("LightPink"), setDisplayText: "09-2548")
+                        CapsuleButtons(color: Color("LightPurple"), title: "07-3215")
+                        CapsuleButtons(color: Color("LightPink"), title: "09-2548")
                     } // Button Stack 1
                     VStack {
-                        CapsuleButtons(setColor: Color("LightOrange"), setDisplayText: "QUIT")
-                        CapsuleButtons(setColor: Color("LightOrange"), setDisplayText: "10-6215")
+                        CapsuleButtons(color: Color("LightOrange"), title: "QUIT")
+                        CapsuleButtons(color: Color("LightOrange"), title: "10-6215")
                     } // Button Stack 2
                 } // Main Headers Data Section
                 
