@@ -16,45 +16,78 @@ struct Corner: View {
         case bottomRight
     }
 
-    var effectiveWidth : Double = 100 // the width of the of the side
+    var columnWidth : Double = 100 // the width of the of the side
     var bannerHeight : Double = 50 // the height of the banner
     // the final height/width will be more because we render the visual size
 
     var color : Color = .orange
     var orientation : Orientation = .topLeft
 
-    // there's probably a better way of encoding this in the enum?
-    private func scaleValues() -> (Double,Double) {
+    private func transformation() -> CGAffineTransform {
+        let transform = CGAffineTransform.identity
         switch orientation {
-            case .topLeft:
-                return (1.0, 1.0)
             case .topRight:
-                return (-1.0, 1.0)
+                transform.scaledBy(x: -1.0, y: 1.0)
+
             case .bottomLeft:
-                return (1.0, -1.0)
-            default:
-                return (-1.0, -1.0)
+                transform.scaledBy(x: 1.0, y: -1.0)
+                    .translatedBy(x: 0.0, y: -2*bannerHeight)
+
+            case .bottomRight:
+                transform.scaledBy(x: -1.0, y: -1.0)
+                // TODO: translate
+
+            case .topLeft:
+                break; // no changes
         }
+
+        return transform
     }
 
     var body: some View {
+
+        let effectiveWidth = columnWidth + bannerHeight
+
         Path { path in
-            path.addArc(center: CGPoint(x: effectiveWidth / 2, y: bannerHeight * 2), radius: bannerHeight * 2 , startAngle: Angle(degrees: 180), endAngle: Angle(degrees:270), clockwise: false)
-            path.addLine(to: CGPoint(x: effectiveWidth, y: 0.0))
-            path.addLine(to: CGPoint(x: effectiveWidth, y: bannerHeight  ))
-            path.addArc(center: CGPoint(x: effectiveWidth, y: bannerHeight * 2), radius: bannerHeight / 2, startAngle: Angle(degrees: 270), endAngle: Angle(degrees: 180), clockwise: true)
+            path.addArc(center: CGPoint(x: bannerHeight * 2, y: bannerHeight * 2),
+                        radius: bannerHeight * 2 ,
+                        startAngle: Angle(degrees: 180),
+                        endAngle: Angle(degrees:270),
+                        clockwise: false)
+            path.addLine(to: CGPoint(x: effectiveWidth , y: 0.0))
+            path.addArc(center: CGPoint(x: effectiveWidth, y: bannerHeight * 2),
+                        radius: bannerHeight ,
+                        startAngle: Angle(degrees: 270),
+                        endAngle: Angle(degrees: 180),
+                        clockwise: true)
 
             path.closeSubpath()
         }
-        .transform(CGAffineTransform(scaleX: scaleValues().0, y: scaleValues().1))
+        .applying(transformation())
         .fill(color)
-        // TODO: adjust true size based on rendered layout (will be larger)
-        .frame(width: effectiveWidth, height: bannerHeight)
+        .frame(width: effectiveWidth , height: bannerHeight * 2 )
     }
 }
 
 struct Corner_Previews: PreviewProvider {
     static var previews: some View {
-        Corner(effectiveWidth: 150, bannerHeight: 25, color: .orange, orientation: .topLeft)
+
+        let bannerHeight = 45.0
+        let columnWidth = 150.0
+
+        VStack(alignment: .leading, spacing: 0) {
+            HStack(alignment: .top, spacing: 0) {
+                Corner(columnWidth: columnWidth, bannerHeight: bannerHeight, color: .orange)
+                Rectangle().fill(.orange).frame(width: nil, height: bannerHeight, alignment: .top)
+            }
+            Rectangle().fill(.orange).frame(width: columnWidth, height: nil, alignment: .leading)
+
+            HStack(alignment: .bottom, spacing: 0) {
+                Corner(columnWidth: columnWidth, bannerHeight: bannerHeight, color: .purple, orientation: .topRight)
+                Rectangle().fill(.purple).frame(width: nil, height: bannerHeight, alignment: .top)
+            }
+        }
+        .padding()
+        .previewLayout(.fixed(width: 800, height: 600))
     }
 }
