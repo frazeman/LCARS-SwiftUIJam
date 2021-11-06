@@ -18,6 +18,7 @@
 		4C18C4CE27358D0600173312 /* Swiss 911 Ultra Compressed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C18C4CD27358D0600173312 /* Swiss 911 Ultra Compressed.ttf */; };
 		4C18C4D027358D2900173312 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C18C4CF27358D2900173312 /* Fonts.swift */; };
 		969D53FC2735C31D00249197 /* Capsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D53FB2735C31C00249197 /* Capsule.swift */; };
+		969D53FE2735C7CF00249197 /* Corner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D53FD2735C7CF00249197 /* Corner.swift */; };
 		96DABD1627358F97003C93CE /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DABD1527358F97003C93CE /* Banner.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		4C18C4CF27358D2900173312 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		4C18C4D127358E2B00173312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		969D53FB2735C31C00249197 /* Capsule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Capsule.swift; sourceTree = "<group>"; };
+		969D53FD2735C7CF00249197 /* Corner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Corner.swift; sourceTree = "<group>"; };
 		96DABD1527358F97003C93CE /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +113,7 @@
 				96DABD1527358F97003C93CE /* Banner.swift */,
 				969D53FB2735C31C00249197 /* Capsule.swift */,
 				4C18C4C92735874B00173312 /* Welcome.swift */,
+				969D53FD2735C7CF00249197 /* Corner.swift */,
 				4C18C4CF27358D2900173312 /* Fonts.swift */,
 				4C18C4A327357ECE00173312 /* Assets.xcassets */,
 				4C18C4CB27358CF000173312 /* Fonts */,
@@ -293,6 +296,7 @@
 			files = (
 				4C18C4D027358D2900173312 /* Fonts.swift in Sources */,
 				969D53FC2735C31D00249197 /* Capsule.swift in Sources */,
+				969D53FE2735C7CF00249197 /* Corner.swift in Sources */,
 				4C18C4A227357ECC00173312 /* ContentView.swift in Sources */,
 				96DABD1627358F97003C93CE /* Banner.swift in Sources */,
 				4C18C4CA2735874B00173312 /* Welcome.swift in Sources */,
