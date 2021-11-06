@@ -21,7 +21,7 @@ struct Capsule: View {
     var body: some View {
         SwiftUI.Capsule(style: .circular)
             .size(width: height*2, height: height)
-            .frame(width: height*1.20, height: height, alignment: .leading)
+            .frame(width: height, height: height, alignment: .leading)
             .clipped()
             .foregroundColor(color)
             .rotationEffect(Angle(degrees: (orientation == .right ? 180 : 0.0)))
