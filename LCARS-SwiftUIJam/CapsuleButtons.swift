@@ -15,14 +15,15 @@ struct CapsuleButtons: View {
     
     var body: some View {
     
-        ZStack {
+        ZStack (alignment: .bottomTrailing) {
             SwiftUI.Capsule()
                 .fill(setColor)
-                .frame(width: 225, height: 100)
-            Text(setDisplayText)
-                .frame(width: 150, height: 75, alignment: .bottomTrailing)
-                .font(Font.LCARS.header)
+            Text(setDisplayText.uppercased())
+                .font(Font.LCARS.headline)
+                .padding(.trailing, 30)
+                .padding(.bottom, 5)
         }
+        .frame(width: 200, height: 80)
     }
 }
 
