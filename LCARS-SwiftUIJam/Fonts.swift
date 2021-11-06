@@ -14,6 +14,7 @@ extension Font {
         static let title = Font.custom(Swiss911.ultraCompressed, size: 54)
         static let headline = Font.custom(Swiss911.ultraCompressed, size: 26)
         static let data = Font.custom(Swiss911.ultraCompressed, size: 22)
+        static let header = Font.custom(Swiss911.ultraCompressed, size: 40)
     }
 
     fileprivate struct Swiss911 {

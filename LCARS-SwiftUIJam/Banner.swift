@@ -15,6 +15,14 @@ struct Banner: View {
     var body: some View {
         HStack(alignment: .center, spacing: 5.0) {
             Capsule(color: bottomBar ? .orange : Color("LightPurple"), height: height, orientation: .left)
+            
+            if !bottomBar {
+                Text(UIDevice.current.name.uppercased())
+                    .font(Font.LCARS.header)
+                    .lineLimit(1)
+                    .foregroundColor(.orange)
+            }
+            
         Rectangle()
             .frame(width: nil, height: height, alignment: .center)
             .foregroundColor(Color("LightPurple"))
@@ -26,6 +34,6 @@ struct Banner: View {
 
 struct Banner_Previews: PreviewProvider {
     static var previews: some View {
-        Banner(bottomBar: false, height: 40)
+        Banner(bottomBar: true, height: 40)
     }
 }
