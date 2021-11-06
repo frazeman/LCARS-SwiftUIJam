@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		147F7C6D2736E37E009BE648 /* CapsuleButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147F7C6C2736E37E009BE648 /* CapsuleButtons.swift */; };
+		147F7C702736E3B9009BE648 /* AuxSystemsMonitorHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147F7C6E2736E3B9009BE648 /* AuxSystemsMonitorHeader.swift */; };
+		147F7C712736E3B9009BE648 /* AuxSystemsMonitorMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147F7C6F2736E3B9009BE648 /* AuxSystemsMonitorMain.swift */; };
 		4C18C4A027357ECC00173312 /* LCARS_SwiftUIJamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C18C49F27357ECC00173312 /* LCARS_SwiftUIJamApp.swift */; };
 		4C18C4A227357ECC00173312 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C18C4A127357ECC00173312 /* ContentView.swift */; };
 		4C18C4A427357ECE00173312 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C18C4A327357ECE00173312 /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		147F7C6C2736E37E009BE648 /* CapsuleButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapsuleButtons.swift; sourceTree = "<group>"; };
+		147F7C6E2736E3B9009BE648 /* AuxSystemsMonitorHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuxSystemsMonitorHeader.swift; sourceTree = "<group>"; };
+		147F7C6F2736E3B9009BE648 /* AuxSystemsMonitorMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuxSystemsMonitorMain.swift; sourceTree = "<group>"; };
 		4C18C49C27357ECC00173312 /* LCARS-SwiftUIJam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LCARS-SwiftUIJam.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C18C49F27357ECC00173312 /* LCARS_SwiftUIJamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCARS_SwiftUIJamApp.swift; sourceTree = "<group>"; };
 		4C18C4A127357ECC00173312 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 				4C18C4D127358E2B00173312 /* Info.plist */,
 				4C18C49F27357ECC00173312 /* LCARS_SwiftUIJamApp.swift */,
 				4C18C4A127357ECC00173312 /* ContentView.swift */,
+				147F7C6E2736E3B9009BE648 /* AuxSystemsMonitorHeader.swift */,
+				147F7C6F2736E3B9009BE648 /* AuxSystemsMonitorMain.swift */,
 				96DABD1527358F97003C93CE /* Banner.swift */,
 				969D53FB2735C31C00249197 /* Capsule.swift */,
 				147F7C6C2736E37E009BE648 /* CapsuleButtons.swift */,
@@ -304,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C18C4D32735B2B100173312 /* NumbersGrid.swift in Sources */,
+				147F7C712736E3B9009BE648 /* AuxSystemsMonitorMain.swift in Sources */,
 				4C18C4D027358D2900173312 /* Fonts.swift in Sources */,
 				969D53FC2735C31D00249197 /* Capsule.swift in Sources */,
 				969D53FE2735C7CF00249197 /* Corner.swift in Sources */,
@@ -312,6 +319,7 @@
 				96DABD1627358F97003C93CE /* Banner.swift in Sources */,
 				4C18C4CA2735874B00173312 /* Welcome.swift in Sources */,
 				4C18C4A027357ECC00173312 /* LCARS_SwiftUIJamApp.swift in Sources */,
+				147F7C702736E3B9009BE648 /* AuxSystemsMonitorHeader.swift in Sources */,
 				147F7C6D2736E37E009BE648 /* CapsuleButtons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
