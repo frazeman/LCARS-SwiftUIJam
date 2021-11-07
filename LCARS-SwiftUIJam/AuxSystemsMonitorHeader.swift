@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AuxSystemsMonitorHeader: View {
+    var quitTapped: (() -> Void)? = nil
+
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack(alignment: .top, spacing: 0) {
@@ -31,7 +33,13 @@ struct AuxSystemsMonitorHeader: View {
                                     CapsuleButtons(color: Color("LightPink"), title: "09-2548")
                                 } // Button Stack 1
                                 VStack(alignment: .trailing) {
-                                    CapsuleButtons(color: Color("LightOrange"), title: "QUIT")
+//                                    CapsuleButtons(color: Color("LightOrange"), title: "QUIT")
+                                    Button("QUIT".uppercased()) {
+                                        SoundManager.shared.play(.SingleBeep)
+                                        quitTapped?()
+                                    }
+                                    .buttonStyle(LcarsButtonStyle())
+
                                     CapsuleButtons(color: Color("LightOrange"), title: "10-6215")
                                 } // Button Stack 2
                             } // Main Headers Data Section

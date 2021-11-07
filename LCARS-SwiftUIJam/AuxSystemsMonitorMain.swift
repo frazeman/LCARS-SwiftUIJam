@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct AuxSystemsMonitorMain: View {
+    var quitTapped: (() -> Void)? = nil
+
     var body: some View {
     
         VStack {
-            AuxSystemsMonitorHeader()
+            AuxSystemsMonitorHeader(quitTapped: quitTapped)
             AuxSystemsMonitorBottom()
         }
         .padding()
