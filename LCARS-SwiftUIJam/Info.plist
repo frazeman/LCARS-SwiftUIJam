@@ -6,5 +6,10 @@
 	<array>
 		<string>Swiss 911 Ultra Compressed.ttf</string>
 	</array>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+	</dict>
 </dict>
 </plist>
