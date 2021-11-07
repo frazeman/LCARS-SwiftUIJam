@@ -40,19 +40,26 @@ struct AuxSystemsMonitorHeader: View {
 
             } // Main Header Section
             HStack(alignment: .bottom, spacing: 0) {
-                Corner(columnWidth: 180, bannerHeight: 15,
+
+                let bannerHeight = 22.0
+                
+                Corner(columnWidth: 180, bannerHeight: bannerHeight,
                        color: Color("LightPurple"), orientation: .bottomLeft)
                 Rectangle().fill(Color("LightPurple"))
-                    .frame(width: nil, height: 15, alignment: .bottom)
+                    .frame(width: nil, height: bannerHeight, alignment: .topLeading)
+                HStack(alignment: .bottom, spacing: 5) {
+                    RectangleGen(color: Color("RosePink"), height: bannerHeight, width: 50)
+                    RectangleGen(color: .orange, height: bannerHeight, width: 150)
+                        RectangleGen(color: Color("LightPink"),height: bannerHeight, width: 250)
+                    RectangleGen(color: Color("RosePink"), height: bannerHeight, width: 50)
+                    }
+                    .padding(EdgeInsets(top: 0.0, leading: 5.0, bottom: 0.0, trailing: 0.0))
             }
 
         }
-        .frame(
-            minWidth: .zero,
-            maxWidth: .infinity,
-            minHeight: .zero,
-            maxHeight: .infinity
-        )
+        .frame(minWidth: .zero,
+               idealWidth: .infinity,
+               maxWidth: .infinity)
         .background(Color.black)
     }
 }
