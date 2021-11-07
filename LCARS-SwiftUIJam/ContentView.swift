@@ -20,7 +20,7 @@ struct ContentView: View {
         case .welcome:
             Welcome(buttonTapped: { self.currentView = .auxSystemsMonitor })
         case .auxSystemsMonitor:
-                AuxSystemsMonitorMain(quitTapped: { self.currentView = .welcome })
+            AuxSystemsMonitorMain(quitTapped: { self.currentView = .welcome })
         }
     }
 }

@@ -33,13 +33,11 @@ struct AuxSystemsMonitorHeader: View {
                                     CapsuleButtons(color: Color("LightPink"), title: "09-2548")
                                 } // Button Stack 1
                                 VStack(alignment: .trailing) {
-//                                    CapsuleButtons(color: Color("LightOrange"), title: "QUIT")
-                                    Button("QUIT".uppercased()) {
+                                    Button("Quit".uppercased()) {
                                         SoundManager.shared.play(.SingleBeep)
                                         quitTapped?()
                                     }
-                                    .buttonStyle(LcarsButtonStyle())
-
+                                    .buttonStyle(LcarsButtonStyle(color: Color("LightOrange"), height: 80))
                                     CapsuleButtons(color: Color("LightOrange"), title: "10-6215")
                                 } // Button Stack 2
                             } // Main Headers Data Section

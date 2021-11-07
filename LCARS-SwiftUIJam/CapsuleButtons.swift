@@ -30,6 +30,8 @@ struct CapsuleButtons: View {
 
 struct LcarsButtonStyle: ButtonStyle {
     var color: Color = .orange
+    var width: CGFloat = 200
+    var height: CGFloat = 60
 
     func makeBody(configuration: Self.Configuration) -> some View {
         ZStack (alignment: .bottomTrailing) {
@@ -44,7 +46,7 @@ struct LcarsButtonStyle: ButtonStyle {
                 .padding(.trailing, 30)
                 .padding(.bottom, 5)
         }
-        .frame(width: 200, height: 60)
+        .frame(width: width, height: height)
     }
 }
 
