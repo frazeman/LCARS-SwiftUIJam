@@ -265,7 +265,6 @@ struct AnimatedGridView: View {
             for r in 0...totalRows {
                 let delay = Double.random(in: 0.1...0.3)
                 sequence.append(delay: delay) {
-                    print("hiding rows: \(r) to \(totalRows)")
                     self.gridData = gridData.hide(rows: Array(r...totalRows))
                 }
             }
