@@ -10,24 +10,22 @@ import SwiftUI
 struct AuxSystemsMonitorMain: View {
     var body: some View {
     
-        HStack {
+        VStack {
             AuxSystemsMonitorHeader()
-//            AuxSystemsMonitorBottom()
+            AuxSystemsMonitorBottom()
         }
+        .padding()
         .frame(minWidth: .zero,
                idealWidth: .infinity,
-               maxWidth: .infinity,
-               minHeight: .zero,
-               idealHeight: .infinity,
-               maxHeight: .infinity,
-               alignment: .top)
-        .background(.black)
+               maxWidth: .infinity)
+        .background(Color.black)
     }
 }
 
 struct AuxSystemsMonitorMain_Previews: PreviewProvider {
     static var previews: some View {
         AuxSystemsMonitorMain()
-.previewInterfaceOrientation(.landscapeLeft)
+.previewInterfaceOrientation(.landscapeRight)
+
     }
 }

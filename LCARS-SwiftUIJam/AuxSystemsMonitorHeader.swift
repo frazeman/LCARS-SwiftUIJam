@@ -23,9 +23,9 @@ struct AuxSystemsMonitorHeader: View {
                                 .foregroundColor(.orange)
                                 .multilineTextAlignment(.trailing)
                             HStack {
-                                AnimatedGridView()
-                                    .frame(height: 170)
-                                    .padding(.leading, 20)
+//                                AnimatedGridView()
+//                                    .frame(height: 170)
+//                                    .padding(.leading, 20)
                                 VStack(alignment: .trailing) {
                                     CapsuleButtons(color: Color("LightPurple"), title: "07-3215")
                                     CapsuleButtons(color: Color("LightPink"), title: "09-2548")
