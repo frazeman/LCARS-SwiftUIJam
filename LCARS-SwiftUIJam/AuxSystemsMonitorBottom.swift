@@ -16,8 +16,8 @@ struct AuxSystemsMonitorBottom: View {
                     let bannerHeight = 22.0
 
                     Corner(columnWidth: 180, bannerHeight: bannerHeight,
-                           color: .brown, orientation: .topLeft)
-                    Rectangle().fill(.brown)
+                           color: Color(.brown), orientation: .topLeft)
+                    Rectangle().fill(Color(.brown))
                         .frame(width: nil, height: bannerHeight, alignment: .topLeading)
                     HStack(alignment: .bottom, spacing: 5) {
                         RectangleGen(color: Color("RosePink"), height: bannerHeight, width: 50)
