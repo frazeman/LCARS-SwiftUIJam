@@ -39,7 +39,6 @@ struct AuxSystemsMonitorBottom: View {
 
                 AnimatedGridView(animationStyle: .fullscreen)
                     .padding(.leading, 20)
-                    .border(Color.white)
 
             } // bottom content (below banner)
         }
