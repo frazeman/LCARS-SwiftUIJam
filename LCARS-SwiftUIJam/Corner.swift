@@ -23,25 +23,26 @@ struct Corner: View {
     var color : Color = .orange
     var orientation : Orientation = .topLeft
 
-    private func transformation() -> CGAffineTransform {
-        let transform = CGAffineTransform.identity
+    private var orientationTransform : CGAffineTransform {
+
+        let effectiveWidth = columnWidth + bannerHeight
+
         switch orientation {
             case .topRight:
-                transform.scaledBy(x: -1.0, y: 1.0)
-
-            case .bottomLeft:
-                transform.scaledBy(x: 1.0, y: -1.0)
-                    .translatedBy(x: 0.0, y: -2*bannerHeight)
+                return CGAffineTransform.identity.scaledBy(x: -1.0, y: 1.0)
+                    .translatedBy(x: -effectiveWidth, y: 0)
 
             case .bottomRight:
-                transform.scaledBy(x: -1.0, y: -1.0)
-                // TODO: translate
+                return CGAffineTransform.identity.translatedBy(x: effectiveWidth, y: 2*bannerHeight)
+                    .scaledBy(x: -1.0, y: -1.0)
+
+            case .bottomLeft:
+                return CGAffineTransform.identity.scaledBy(x: 1.0, y: -1.0)
+                    .translatedBy(x: 0.0, y: -2*bannerHeight)
 
             case .topLeft:
-                break; // no changes
+                return CGAffineTransform.identity
         }
-
-        return transform
     }
 
     var body: some View {
@@ -63,9 +64,9 @@ struct Corner: View {
 
             path.closeSubpath()
         }
-        .applying(transformation())
+        .applying(orientationTransform)
         .fill(color)
-        .frame(width: effectiveWidth , height: bannerHeight * 2 )
+        .frame(width: effectiveWidth, height: bannerHeight * 2 )
     }
 }
 
@@ -75,16 +76,20 @@ struct Corner_Previews: PreviewProvider {
         let bannerHeight = 45.0
         let columnWidth = 150.0
 
+        Corner(columnWidth: columnWidth, bannerHeight: bannerHeight, color: .red, orientation: .bottomRight)
+
         VStack(alignment: .leading, spacing: 0) {
             HStack(alignment: .top, spacing: 0) {
                 Corner(columnWidth: columnWidth, bannerHeight: bannerHeight, color: .orange)
                 Rectangle().fill(.orange).frame(width: nil, height: bannerHeight, alignment: .top)
+                Corner(columnWidth: 20, bannerHeight: bannerHeight, color: .green, orientation: .topRight)
             }
             Rectangle().fill(.orange).frame(width: columnWidth, height: nil, alignment: .leading)
 
             HStack(alignment: .bottom, spacing: 0) {
-                Corner(columnWidth: columnWidth, bannerHeight: bannerHeight, color: .purple, orientation: .topRight)
+                Corner(columnWidth: columnWidth, bannerHeight: bannerHeight, color: .purple, orientation: .bottomLeft)
                 Rectangle().fill(.purple).frame(width: nil, height: bannerHeight, alignment: .top)
+                Corner(columnWidth: 20, bannerHeight: bannerHeight, color: .green, orientation: .bottomRight)
             }
         }
         .padding()
