@@ -26,6 +26,7 @@
 		4C18C4D92736F01500173312 /* Two Beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4C18C4D72736F01500173312 /* Two Beep.wav */; };
 		4C18C4DA2736F01500173312 /* Single Beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4C18C4D82736F01500173312 /* Single Beep.wav */; };
 		4C18C4DC2736F02A00173312 /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C18C4DB2736F02A00173312 /* Sounds.swift */; };
+		966CE9852738737D00204A75 /* AuxSystemsMonitorBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CE9842738737D00204A75 /* AuxSystemsMonitorBottom.swift */; };
 		969D53FC2735C31D00249197 /* Capsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D53FB2735C31C00249197 /* Capsule.swift */; };
 		969D53FE2735C7CF00249197 /* Corner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D53FD2735C7CF00249197 /* Corner.swift */; };
 		96DABD1627358F97003C93CE /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DABD1527358F97003C93CE /* Banner.swift */; };
@@ -72,6 +73,7 @@
 		4C18C4D72736F01500173312 /* Two Beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Two Beep.wav"; sourceTree = "<group>"; };
 		4C18C4D82736F01500173312 /* Single Beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Single Beep.wav"; sourceTree = "<group>"; };
 		4C18C4DB2736F02A00173312 /* Sounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
+		966CE9842738737D00204A75 /* AuxSystemsMonitorBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuxSystemsMonitorBottom.swift; sourceTree = "<group>"; };
 		969D53FB2735C31C00249197 /* Capsule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Capsule.swift; sourceTree = "<group>"; };
 		969D53FD2735C7CF00249197 /* Corner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Corner.swift; sourceTree = "<group>"; };
 		96DABD1527358F97003C93CE /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				4C18C49F27357ECC00173312 /* LCARS_SwiftUIJamApp.swift */,
 				4C18C4A127357ECC00173312 /* ContentView.swift */,
 				147F7C6E2736E3B9009BE648 /* AuxSystemsMonitorHeader.swift */,
+				966CE9842738737D00204A75 /* AuxSystemsMonitorBottom.swift */,
 				147F7C6F2736E3B9009BE648 /* AuxSystemsMonitorMain.swift */,
 				96DABD1527358F97003C93CE /* Banner.swift */,
 				969D53FB2735C31C00249197 /* Capsule.swift */,
@@ -344,6 +347,7 @@
 				4C18C4CA2735874B00173312 /* Welcome.swift in Sources */,
 				4C18C4A027357ECC00173312 /* LCARS_SwiftUIJamApp.swift in Sources */,
 				147F7C702736E3B9009BE648 /* AuxSystemsMonitorHeader.swift in Sources */,
+				966CE9852738737D00204A75 /* AuxSystemsMonitorBottom.swift in Sources */,
 				147F7C6D2736E37E009BE648 /* CapsuleButtons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
