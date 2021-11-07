@@ -121,14 +121,14 @@ struct GridData: Equatable {
         return GridData(columns: newColumns)
     }
 
-    static func generateNumberColumn(rows: Int, minWidth: Int, maxWidth: Int) -> Column {
+    static func generateNumberColumn(rows: Int, minChar: Int, maxChar: Int) -> Column {
         var items = [Item]()
 
         for _ in 0..<rows {
-            let width = Int.random(in: minWidth...maxWidth)
+            let chars = Int.random(in: minChar...maxChar)
 
-            let min = Int(pow(Double(10), Double(width-1)))
-            let max = Int(pow(Double(10), Double(width))) - 1
+            let min = Int(pow(Double(10), Double(chars-1)))
+            let max = Int(pow(Double(10), Double(chars))) - 1
 
             let number = Int.random(in: min...max)
             items.append(Item(value: "\(number)"))
@@ -145,7 +145,7 @@ struct GridData: Equatable {
             let minWidth = Int.random(in: 1...7)
 
             columns.append(
-                generateNumberColumn(rows: rows, minWidth: minWidth, maxWidth: minWidth + spread)
+                generateNumberColumn(rows: rows, minChar: minWidth, maxChar: minWidth + spread)
             )
         }
 
@@ -155,11 +155,41 @@ struct GridData: Equatable {
     static let testData = generateNumberGrid(cols: 6, rows: 5)
 }
 
+extension GridData {
+
+    static func generateNumberGrid(width: CGFloat, height: CGFloat) -> GridData {
+        let rowCount = Int(floor(height / GridView.estimatedRowHeight))
+        var remainingWidth = width
+
+        var columns = [Column]()
+
+        while remainingWidth > 0 {
+            let spread = Int.random(in: 1...4)
+            let minChar = Int.random(in: 1...7)
+            let maxChar = minChar + spread
+
+            remainingWidth -= CGFloat(maxChar) * GridView.estimatedCharWidth + GridView.columnPadding
+            if remainingWidth < 0 { break }
+
+            columns.append(
+                generateNumberColumn(rows: rowCount, minChar: minChar, maxChar: maxChar)
+            )
+        }
+
+        return GridData(columns: columns)
+    }
+
+}
+
 struct GridView: View {
     let data: GridData
 
+    static let columnPadding: CGFloat = 20
+    static let estimatedRowHeight: CGFloat = 30
+    static let estimatedCharWidth: CGFloat = 7.25
+
     var body: some View {
-        HStack(spacing: 20) {
+        HStack(spacing: Self.columnPadding) {
             ForEach(data.columns) { column in
                 VStack(alignment: .trailing, spacing: 5) {
                     ForEach(column.items) { item in
@@ -198,16 +228,23 @@ struct GridView: View {
 
 struct AnimatedGridView: View {
     @State var gridData: GridData = .testData
+    @State private var targetSize: CGSize = .zero
 
     var body: some View {
-        GridView(data: gridData)
-            .onAppear {
-                self.animateGrid()
-            }
+        GeometryReader { proxy in
+            GridView(data: gridData)
+                .onAppear {
+                    targetSize = proxy.size
+                    self.animateGrid()
+                }
+                .onChange(of: proxy.size) { newSize in
+                    targetSize = newSize
+                }
+        }
     }
 
     private func animateGrid() {
-        self.gridData = .generateNumberGrid(cols: 6, rows: 5)
+        self.gridData = .generateNumberGrid(width: targetSize.width, height: targetSize.height)
         self.gridData = gridData.hideAll()
 
         let sequence = AnimationSequence(duration: 0.01)

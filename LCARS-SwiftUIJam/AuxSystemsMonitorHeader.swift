@@ -14,18 +14,18 @@ struct AuxSystemsMonitorHeader: View {
                 VStack(alignment: .leading, spacing: 5) {
                     RectangleGen(color: .orange, title: "LCARS 23295", alignment: .bottomTrailing)
                     RectangleGen(color: Color("LightPurple"), title: "01-23584", alignment: .topTrailing)
-
                 } // Main Header Left Section
                 Spacer()
                 VStack(alignment: .trailing) {
                         VStack(alignment: .trailing) {
                             Text("AUXILIARY SYSTEMS MONITOR 882")
                                 .font(Font.LCARS.title)
-                                .foregroundColor(.orange)                    .multilineTextAlignment(.trailing)
-
-                            HStack  {
+                                .foregroundColor(.orange)
+                                .multilineTextAlignment(.trailing)
+                            HStack {
                                 AnimatedGridView()
-                                //                        .scaledToFill()
+                                    .frame(height: 170)
+                                    .padding(.leading, 20)
                                 VStack(alignment: .trailing) {
                                     CapsuleButtons(color: Color("LightPurple"), title: "07-3215")
                                     CapsuleButtons(color: Color("LightPink"), title: "09-2548")
@@ -55,7 +55,6 @@ struct AuxSystemsMonitorHeader: View {
                     }
                     .padding(EdgeInsets(top: 0.0, leading: 5.0, bottom: 0.0, trailing: 0.0))
             }
-
         }
         .frame(minWidth: .zero,
                idealWidth: .infinity,
@@ -68,7 +67,6 @@ struct AuxSystemsMonitorHeader_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             AuxSystemsMonitorHeader()
-                .previewInterfaceOrientation(.portraitUpsideDown)
             AuxSystemsMonitorHeader()
                 .previewInterfaceOrientation(.landscapeLeft)
         }
