@@ -20,6 +20,7 @@ struct CapsuleButtons: View {
                 .fill(color)
             Text(title.uppercased())
                 .font(Font.LCARS.headline)
+                .foregroundColor(.black)
                 .padding(.trailing, 30)
                 .padding(.bottom, 5)
         }
@@ -43,6 +44,7 @@ struct LcarsButtonStyle: ButtonStyle {
 
             configuration.label
                 .font(Font.LCARS.headline)
+                .foregroundColor(.black)
                 .padding(.trailing, 30)
                 .padding(.bottom, 5)
         }

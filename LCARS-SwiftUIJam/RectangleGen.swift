@@ -22,6 +22,7 @@ struct RectangleGen: View {
             if let title = title {
                 Text(title.uppercased())
                     .font(Font.LCARS.headline)
+                    .foregroundColor(.black)
                     .padding(.vertical, 5)
                     .padding(.horizontal, 10)
             }
