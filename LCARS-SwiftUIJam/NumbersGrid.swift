@@ -227,6 +227,13 @@ struct GridView: View {
 }
 
 struct AnimatedGridView: View {
+    var animationStyle: AnimationStyle = .header
+
+    enum AnimationStyle {
+        case header
+        case fullscreen
+    }
+
     @State var gridData: GridData = .testData
     @State private var targetSize: CGSize = .zero
 
@@ -252,21 +259,53 @@ struct AnimatedGridView: View {
         let totalRows = gridData.rowCount
 
         // Show rows
-        for r in 0...totalRows {
-            let delay = Double.random(in: 0.1...0.3)
-            sequence.append(delay: delay) {
-                self.gridData = gridData.hide(rows: Array(r...totalRows))
+        switch animationStyle {
+        case .header:
+            // single row at a time
+            for r in 0...totalRows {
+                let delay = Double.random(in: 0.1...0.3)
+                sequence.append(delay: delay) {
+                    print("hiding rows: \(r) to \(totalRows)")
+                    self.gridData = gridData.hide(rows: Array(r...totalRows))
+                }
+            }
+
+        case .fullscreen:
+            // few rows at a time
+            var r: Int = 0
+            while r < totalRows {
+                r += Int.random(in: 2...3)
+                r = min(r, totalRows)
+
+                let row = r
+                sequence.append(delay: 0.1) {
+                    self.gridData = gridData.hide(rows: Array(row...totalRows))
+                }
             }
         }
 
         sequence.wait(for: 0.5)
 
         // Determine row to flash
-        let flashRow = Int.random(in: 0..<totalRows)
+        let flashRow: Int
+        switch animationStyle {
+        case .header:
+            // Guard against totalRows = 0
+            flashRow = totalRows > 0 ? Int.random(in: 0..<totalRows) : -1
+        case .fullscreen:
+            // No flash
+            flashRow = -1
+        }
 
         // Highlight rows
         for r in 0...totalRows {
-            let delay = Double.random(in: 0.1...0.3)
+            let delay: Double
+            switch animationStyle {
+            case .header:
+                delay = Double.random(in: 0.1...0.3)
+            case .fullscreen:
+                delay = 0.1
+            }
 
             sequence.append(delay: delay) {
                 self.gridData = gridData.highlight(row: r)
@@ -299,7 +338,7 @@ struct AnimatedGridView: View {
 
 struct NumbersGrid_Previews: PreviewProvider {
     static var previews: some View {
-        AnimatedGridView()
+        AnimatedGridView(animationStyle: .fullscreen)
             .padding()
             .frame(
                 minWidth: .zero,
