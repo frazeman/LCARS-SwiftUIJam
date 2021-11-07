@@ -21,7 +21,8 @@ struct AuxSystemsMonitorBottom: View {
                         .frame(width: nil, height: bannerHeight, alignment: .topLeading)
                     HStack(alignment: .bottom, spacing: 5) {
                         RectangleGen(color: Color("RosePink"), height: bannerHeight, width: 50)
-                        Rectangle().fill(.orange).frame(width: 150, height: bannerHeight/2, alignment: .topLeading) // TODO: needs to hug top!
+                        Rectangle().fill(.orange).frame(width: 150, height: bannerHeight/2, alignment: .top)
+                            .padding(EdgeInsets(top: 0, leading: 0, bottom: bannerHeight/2, trailing: 0))
                         RectangleGen(color: Color("LightPink"),height: bannerHeight, width: 250)
                         RectangleGen(color: Color("RosePink"), height: bannerHeight, width: 50)
                     } // Top corner bar
@@ -33,8 +34,9 @@ struct AuxSystemsMonitorBottom: View {
                 VStack(alignment: .leading, spacing: 5) {
                     RectangleGen(color: Color(.brown), title: "03-41248", height: 170, width: 180, alignment: .bottomTrailing)
                     RectangleGen(color: Color(.orange), title: "04-14702", height: 60, width: 180, alignment: .bottomTrailing)
-                    RectangleGen(color: Color(.orange), title: "04-14702", height: .infinity, width: 180, alignment: .topTrailing)
+                    RectangleGen(color: Color("LightOrange"), title: "05-32456", height: .infinity, width: 180, alignment: .topTrailing)
                 } // Left Sidebar
+                .padding(EdgeInsets(top: 5.0, leading: 0.0, bottom: 0.0, trailing: 0.0))
                 
                 Text("Number grid")
                     .foregroundColor(.blue)
@@ -53,11 +55,5 @@ struct AuxSystemsMonitorBottom_Previews: PreviewProvider {
     static var previews: some View {
         AuxSystemsMonitorBottom()
             .previewInterfaceOrientation(.landscapeLeft)
-    }
-}
-
-struct AuxSystemsMonitorBottom_Previews_2: PreviewProvider {
-    static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }
